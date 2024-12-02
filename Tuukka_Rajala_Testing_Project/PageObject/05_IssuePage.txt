@@ -1,0 +1,65 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+Documentation	Issue Test scenario. CRUD Operation: Create, Read, Update, Delete
+
+# TODO: Write Precondition and Postcondition, Tags 
+
+Pre Condition	Open Browser. Must have existing project. Tips: Project must be created by the user before 
+Post Condition	Close All Browsers
+Tags	Issues Page
+
+#******************* Common Variables ********************
+
+
+*** Variables ***
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Issue creation field variables, Updated name of the issue
+
+Title= Test Issue
+Updated Title= Test Issue 2
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive Test Cases and Test Process steps
+
+# Positive Test examples are below write test process steps for each below test case
+
+Create issue
+	Navigate to Issues page
+	Click Select project to create issue
+	Choose a project
+	Click New issue in "project name"
+	Input Title
+	Click Create issue
+	Verify issue was created
+
+Update name of issue
+	Navigate to Issues page
+	Choose created issue
+	Click Edit
+	Input Updated Title
+	Click Save changes
+	Verify issue title has been updated
+
+
+Create second issue with previous updated name
+	Navigate to Issues page
+	Click Select project to create issue
+	Choose a project
+	Click New issue in "project name"
+	Input Updated Title
+	Click Create issue
+	Verify issue was created
+
+Close first issue
+	Navigate to Issues page
+	Choose created issue
+	Click Close issue
+	Verify issue was closed

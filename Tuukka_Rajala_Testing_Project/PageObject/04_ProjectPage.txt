@@ -1,0 +1,80 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+
+# TODO: Write Dcocumentation e.g. Project Test scenario. CRUD Operation: Create, Read, Update, Delete
+
+Documentation	Testing the project page
+
+# TODO: Write Precondition, Postcondition, Tags
+
+Pre Condition	 Open Browser
+Post Condition	Close all Browsers
+Tags	Project Creation
+
+#******************* Common Variables ********************
+
+*** Variables ***
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Project creation field variables
+
+Project Name= Test99
+Updated Name Test100
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive and Negative Test Cases and Test Process steps
+
+# Positive Test examples are below write test process steps for each below test case
+
+Create blank project
+	Navigate to Projects page
+	Click New project
+	Click Create blank project
+	Input Project Name
+	Click Create project
+	Verify project was succesfully created.
+
+
+
+Create project from template
+	Navigate to Projects page
+	Click New project
+	Click Create from template
+	Choose template and click Use template
+	Input Project Name
+	Click Create project
+	Verify the project was succesfully impored.
+
+Update name of template project
+	Navigate to Projects page
+	Choose the project
+	Navigate to Settings > General
+	Input Updated Name for project
+	Click Save Changes
+	Verify Project was succesfully updated
+
+Delete template project
+	Navigate to Projects page
+	Choose the project
+	Navigate to Settings > General
+	Navigate to Advanced header
+	Click Delete project
+	Input validation message
+	Click Yes, delete project
+	Verify project is pending deletion
+
+# Negative Test examples are below write test process steps for each below test case
+
+Create a blank project with the previous same name
+	Navigate to Projects page
+	Click New project
+	Click Create blank project
+	Input Project Name
+	Verify that error message should show Name has already been taken
